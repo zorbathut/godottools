@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://qaqpyk01a0b1"]
+
+[node name="window_blackboard_item" type="Label"]
+offset_right = 42.0
+offset_bottom = 26.0
+size_flags_vertical = 0
+text = "[text]"

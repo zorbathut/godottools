@@ -1,0 +1,231 @@
+[gd_scene load_steps=13 format=3 uid="uid://cmee4esj0hfbp"]
+
+[ext_resource type="Script" path="res://ui/debug/DebugUI.cs" id="1_c08yn"]
+[ext_resource type="Texture2D" uid="uid://bjuamg7364u3j" path="res://ui/debug/console.png" id="2_g5ryg"]
+[ext_resource type="Texture2D" uid="uid://bmmle5is3j5sd" path="res://ui/debug/hacker.png" id="3_qi7ow"]
+[ext_resource type="SyntaxHighlighter" uid="uid://dvljr18gu1sjo" path="res://ui/debug/DebugSyntaxHighlighter.tres" id="4_1vyn5"]
+[ext_resource type="Texture2D" uid="uid://ctq5vxkxghjs5" path="res://ui/debug/stopwatch.png" id="4_344qf"]
+[ext_resource type="Texture2D" uid="uid://fv8vx56pwiwu" path="res://ui/debug/blackboard.png" id="4_m4b8f"]
+[ext_resource type="Texture2D" uid="uid://22dx53gc7n2h" path="res://ui/debug/pause.png" id="5_2wriu"]
+[ext_resource type="PackedScene" uid="uid://b18i23k2rm3p6" path="res://ui/debug/window_button.tscn" id="6_boldo"]
+[ext_resource type="PackedScene" uid="uid://ls3avbx8pghk" path="res://ui/debug/window_blackboard.tscn" id="9_p5i8w"]
+[ext_resource type="Script" path="res://ui/debug/DebugProfWindow.cs" id="14_c4hre"]
+[ext_resource type="Texture2D" uid="uid://l1h0w4qbar18" path="res://ui/debug/save-arrow.png" id="15_05syx"]
+
+[sub_resource type="Theme" id="Theme_lij2y"]
+
+[node name="DebugEnv" type="Control" node_paths=PackedStringArray("consoleWindow", "errorList", "callstack", "debugWindow", "debugBlackboardWindow", "debugProfWindow", "statusLabel", "networkDebugContainer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c08yn")
+consoleWindow = NodePath("ConsoleWindow")
+errorList = NodePath("ConsoleWindow/VBoxContainer/VSplitContainer/ErrorList")
+callstack = NodePath("ConsoleWindow/VBoxContainer/VSplitContainer/Callstack")
+ColorInf = Color(0.8, 0.8, 0.8, 1)
+ColorWrn = Color(0.9, 0.9, 0.45, 1)
+ColorErr = Color(1, 0.5, 0.5, 1)
+debugWindow = NodePath("DebugCommandWindow")
+debugBlackboardWindow = NodePath("DebugBlackboard")
+debugProfWindow = NodePath("ProfWindow")
+statusLabel = NodePath("DebugPanel/VBoxContainer/StatusLabel")
+networkDebugContainer = NodePath("NetworkDebugList")
+
+[node name="DebugPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = 60.0
+offset_right = -28.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(16, 16)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugPanel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_right = 34.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Spacer" type="Control" parent="DebugPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DebugPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="DebugConsole" type="Button" parent="DebugPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Console"
+
+[node name="TextureRect" type="TextureRect" parent="DebugPanel/VBoxContainer/HBoxContainer/DebugConsole"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("2_g5ryg")
+
+[node name="DebugButtons" type="Button" parent="DebugPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Debug/Hack Tools"
+
+[node name="TextureRect" type="TextureRect" parent="DebugPanel/VBoxContainer/HBoxContainer/DebugButtons"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_qi7ow")
+expand_mode = 1
+
+[node name="DebugProf" type="Button" parent="DebugPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Debug/Hack Tools"
+
+[node name="TextureRect" type="TextureRect" parent="DebugPanel/VBoxContainer/HBoxContainer/DebugProf"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("4_344qf")
+expand_mode = 1
+
+[node name="DebugBlackboard" type="Button" parent="DebugPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Blackboard Debugging"
+
+[node name="TextureRect" type="TextureRect" parent="DebugPanel/VBoxContainer/HBoxContainer/DebugBlackboard"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("4_m4b8f")
+expand_mode = 1
+
+[node name="DebugPause" type="Button" parent="DebugPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Pause/Resume"
+
+[node name="TextureRect" type="TextureRect" parent="DebugPanel/VBoxContainer/HBoxContainer/DebugPause"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("5_2wriu")
+expand_mode = 1
+
+[node name="StatusLabel" type="Label" parent="DebugPanel/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="ConsoleWindow" parent="." instance=ExtResource("6_boldo")]
+title = "Console"
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConsoleWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lij2y")
+
+[node name="VSplitContainer" type="VSplitContainer" parent="ConsoleWindow/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+split_offset = 400
+
+[node name="ErrorList" type="TextEdit" parent="ConsoleWindow/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+editable = false
+syntax_highlighter = ExtResource("4_1vyn5")
+
+[node name="Callstack" type="TextEdit" parent="ConsoleWindow/VBoxContainer/VSplitContainer"]
+layout_mode = 2
+editable = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ConsoleWindow/VBoxContainer"]
+layout_mode = 2
+
+[node name="Copy" type="Button" parent="ConsoleWindow/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Copy"
+
+[node name="DebugCommandWindow" parent="." instance=ExtResource("6_boldo")]
+title = "Debug"
+visible = false
+
+[node name="DebugBlackboard" parent="." instance=ExtResource("9_p5i8w")]
+visible = false
+
+[node name="NetworkDebugList" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -583.0
+offset_top = 13.0
+offset_right = -31.0
+offset_bottom = 1083.0
+grow_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="ProfWindow" type="Window" parent="." node_paths=PackedStringArray("Path", "Data")]
+title = "Prof"
+position = Vector2i(257, 243)
+size = Vector2i(1346, 639)
+visible = false
+script = ExtResource("14_c4hre")
+Path = NodePath("VBoxContainer/Header/Path")
+Data = NodePath("VBoxContainer/Tree")
+ForwardIcon = ExtResource("15_05syx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ProfWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="HBoxContainer" parent="ProfWindow/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Back" type="Button" parent="ProfWindow/VBoxContainer/Header"]
+layout_mode = 2
+text = "Back"
+
+[node name="Path" type="Label" parent="ProfWindow/VBoxContainer/Header"]
+layout_mode = 2
+text = "Root > Bootstrap > horse"
+horizontal_alignment = 3
+
+[node name="Tree" type="Tree" parent="ProfWindow/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 4
+column_titles_visible = true
+
+[connection signal="pressed" from="DebugPanel/VBoxContainer/HBoxContainer/DebugConsole" to="." method="_on_debug_console_pressed"]
+[connection signal="pressed" from="DebugPanel/VBoxContainer/HBoxContainer/DebugButtons" to="." method="_on_debug_tool_pressed"]
+[connection signal="pressed" from="DebugPanel/VBoxContainer/HBoxContainer/DebugProf" to="." method="_on_debug_prof_pressed"]
+[connection signal="pressed" from="DebugPanel/VBoxContainer/HBoxContainer/DebugBlackboard" to="." method="_on_debug_blackboard_pressed"]
+[connection signal="pressed" from="DebugPanel/VBoxContainer/HBoxContainer/DebugPause" to="." method="_on_debug_pause_pressed"]
+[connection signal="pressed" from="ConsoleWindow/VBoxContainer/HBoxContainer/Copy" to="." method="_on_copy_pressed"]
+[connection signal="close_requested" from="ProfWindow" to="ProfWindow" method="hide"]
+[connection signal="pressed" from="ProfWindow/VBoxContainer/Header/Back" to="ProfWindow" method="_on_back_pressed"]
+[connection signal="button_clicked" from="ProfWindow/VBoxContainer/Tree" to="ProfWindow" method="_on_tree_button_clicked"]

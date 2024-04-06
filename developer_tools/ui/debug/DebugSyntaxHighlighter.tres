@@ -1,0 +1,6 @@
+[gd_resource type="SyntaxHighlighter" load_steps=2 format=3 uid="uid://dvljr18gu1sjo"]
+
+[ext_resource type="Script" path="res://ui/debug/DebugSyntaxHighlighter.cs" id="1_pjwnu"]
+
+[resource]
+script = ExtResource("1_pjwnu")

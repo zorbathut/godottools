@@ -9,7 +9,7 @@ Pull requests welcome, bug reports welcome, requests welcome, feedback in genera
 
 ----
 
-This is just a placeholder, I haven't actually added anything yet.
+[**developer_tools**](https://github.com/zorbathut/godottools/tree/dev/developer_tools): This contains a bunch of in-engine convenient developer tools, both for your own purposes and for the benefit of modders. Right now this includes an ingame debug log, a simple visual profiler, and a debug-command GUI. Be aware that this is hackily extracted from my current project and will require some work to get functioning properly.
 
 ----
 

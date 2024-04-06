@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b18i23k2rm3p6"]
+
+[ext_resource type="Theme" uid="uid://dcyihlxyvr1sk" path="res://ui/debug/debug_theme.tres" id="1_lopkd"]
+[ext_resource type="Script" path="res://ui/debug/DebugButtonWindow.cs" id="2_upfim"]
+[ext_resource type="PackedScene" uid="uid://cxow80lk880at" path="res://ui/debug/window_button_item.tscn" id="3_guk8m"]
+
+[node name="DebugCommandWindow" type="Window" node_paths=PackedStringArray("buttonContainer")]
+title = "DebugCommand"
+position = Vector2i(257, 243)
+size = Vector2i(1346, 639)
+theme = ExtResource("1_lopkd")
+script = ExtResource("2_upfim")
+buttonScene = ExtResource("3_guk8m")
+buttonContainer = NodePath("VFlowContainer")
+
+[node name="VFlowContainer" type="VFlowContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="close_requested" from="." to="." method="hide"]

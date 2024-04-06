@@ -1,0 +1,14 @@
+{
+  "profiles": {
+	"Run And Debug": {
+      "commandName": "Executable",
+      "executablePath": "..\\godot\\bin\\godot.windows.opt.tools.x86_64.mono.exe",
+      "commandLineArgs": "--path .",
+      "workingDirectory": ".",
+      "nativeDebugging": true
+    },
+    "Build Library": {
+      "commandName": "Project"
+    },
+  }
+}

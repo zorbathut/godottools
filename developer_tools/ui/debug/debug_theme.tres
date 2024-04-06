@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dcyihlxyvr1sk"]
+
+[ext_resource type="SystemFont" uid="uid://b85oiday8k3v8" path="res://ui/debug/debug_font.tres" id="1_mnh7l"]
+
+[resource]
+TextEdit/colors/font_readonly_color = Color(0.87451, 0.87451, 0.87451, 1)
+TextEdit/font_sizes/font_size = 12
+TextEdit/fonts/font = ExtResource("1_mnh7l")

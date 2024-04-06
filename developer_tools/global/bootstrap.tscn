@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7lrfc3l3utgn"]
+
+[ext_resource type="Script" path="res://src/Bootstrap.cs" id="1_do876"]
+[ext_resource type="PackedScene" uid="uid://b8dkdn4u6fbcu" path="res://global/permaload.tscn" id="2_2e7xb"]
+
+[node name="Bootstrap" type="Node"]
+script = ExtResource("1_do876")
+permaload = ExtResource("2_2e7xb")

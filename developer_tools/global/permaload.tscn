@@ -1,0 +1,16 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8dkdn4u6fbcu"]
+
+[ext_resource type="Script" path="res://src/Permaload.cs" id="1_8ip7s"]
+[ext_resource type="PackedScene" uid="uid://bmnruc2kohc2l" path="res://ui/hud.tscn" id="2_2cbwu"]
+[ext_resource type="PackedScene" uid="uid://cmee4esj0hfbp" path="res://ui/debug/debug.tscn" id="2_2uqi1"]
+[ext_resource type="PackedScene" uid="uid://jqtbij64wfvb" path="res://level/arena.tscn" id="3_88eui"]
+[ext_resource type="Material" path="res://global/shader/debug_ontop_mat.tres" id="4_5c0l7"]
+[ext_resource type="Material" path="res://global/shader/debug_z_mat.tres" id="5_dcrsd"]
+
+[node name="permaload" type="Node"]
+script = ExtResource("1_8ip7s")
+Hud = ExtResource("2_2cbwu")
+DebugUI = ExtResource("2_2uqi1")
+Arena = ExtResource("3_88eui")
+debugOntopMat = ExtResource("4_5c0l7")
+debugZMat = ExtResource("5_dcrsd")
