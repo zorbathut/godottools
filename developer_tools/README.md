@@ -10,7 +10,7 @@ Contents:
 
 ---
 
-![Console window](https://github.com/zorbathut/godottools/tree/dev/developer_tools/README_console.png)
+![Console window](https://github.com/zorbathut/godottools/blob/dev/developer_tools/README_console.png)
 
 A CONSOLE WINDOW that displays Godot errors and messages as well as your own errors and messages! You can COPY STUFF OUT OF IT and maybe someday in the future it will have a BUILT-IN BUG REPORTER but it doesn't right now. Also it POPS UP ANNOYINGLY if you have a warning or an error! It is INTENSELY ANNOYING! This is a feature because it means you will actually see warnings and errors instead of not seeing them!
 
@@ -22,13 +22,13 @@ A DEBUG TOOL GUI that I cannot provide a screenshot of because right now I am in
 
 You know what, here's a screenshot of Rimworld's, which is frankly what I'm cribbing off anyway:
 
-![Console window](https://github.com/zorbathut/godottools/tree/dev/developer_tools/README_command.png)
+![Console window](https://github.com/zorbathut/godottools/blob/dev/developer_tools/README_command.png)
 
 Yeah! Imagine that! Only this isn't that yet because it's really early days. But imagine it anyway!
 
 ---
 
-![Console window](https://github.com/zorbathut/godottools/tree/dev/developer_tools/README_prof.png)
+![Console window](https://github.com/zorbathut/godottools/blob/dev/developer_tools/README_prof.png)
 
 A PROFILER that shows you what places in your code are slow! You need to INSTRUMENT THEM MANUALLY! This is actually A FEATURE because it means you can instrument ONLY THE REALLY IMPORTANT STUFF and run it in release without a significant performance hit! Then include a FULL PROFILER DUMP along with SLOW FRAME REPORTS so you can figure out why your code is slow! I don't yet have a way to provide a FULL PROFILER DUMP! Perhaps SOMEDAY!
 
