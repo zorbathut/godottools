@@ -9,6 +9,8 @@ Pull requests welcome, bug reports welcome, requests welcome, feedback in genera
 
 ----
 
+[**vendoring**](https://github.com/zorbathut/godottools/tree/dev/vendoring): This contains a set of scripts and tooling for making your own custom changes to Godot and making it relatively easy to use. Right now this assumes everyone working on the game will be willing to build the engine, but it does make that into a one-click process. Read [SETUP.md](https://github.com/zorbathut/godottools/tree/dev/vendoring/SETUP.md) for instructions on how to get it set up, and pester me on Discord if you're having trouble.
+
 [**developer_tools**](https://github.com/zorbathut/godottools/tree/dev/developer_tools): This contains a bunch of in-engine convenient developer tools, both for your own purposes and for the benefit of modders. Right now this includes an ingame debug log, a simple visual profiler, and a debug-command GUI. Be aware that this is hackily extracted from my current project and will require some work to get functioning properly.
 
 ----

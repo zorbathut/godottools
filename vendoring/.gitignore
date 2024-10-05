@@ -1,0 +1,18 @@
+# temp storage for the update process
+/update_godot
+/update_godot_engine
+
+# temp storage for releases
+/deploy
+/artifact
+
+# IDE stuff
+/*DotSettings.user
+**/*csproj.user
+/.vs
+
+# coverage results
+/TestResults
+
+# weird build spam; this shows up when building on visual studio and I don't understand why
+/gdUnit4Net
