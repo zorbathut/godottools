@@ -48,11 +48,11 @@ def run(command, **kwargs):
 def godot_bin(dev):
     if dev:
         return platformswitch(
-            linux = "bin/godot.linuxbsd.editor.dev.double.x86_64.mono",
-            windows = "bin\\godot.windows.editor.dev.double.x86_64.mono.exe",
-            mac = "bin/godot.macos.editor.dev.double.x86_64.mono")
+            linux = "bin/godot.linuxbsd.editor.dev.x86_64.mono",
+            windows = "bin\\godot.windows.editor.dev.x86_64.mono.exe",
+            mac = "bin/godot.macos.editor.dev.x86_64.mono")
     else:
         return platformswitch(
-            linux = "bin/godot.linuxbsd.editor.double.x86_64.mono",
-            windows = "bin\\godot.windows.editor.double.x86_64.mono.exe",
-            mac = "bin/godot.macos.editor.double.x86_64.mono")
+            linux = "bin/godot.linuxbsd.editor.x86_64.mono",
+            windows = "bin\\godot.windows.editor.x86_64.mono.exe",
+            mac = "bin/godot.macos.editor.x86_64.mono")
